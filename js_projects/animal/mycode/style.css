@@ -1,0 +1,102 @@
+.container {
+  position: relative;
+  width: 800px;
+  height: 500px;
+  background-color: red;
+  background-image: url(img/background.png);
+  background-repeat: no-repeat;
+  /* background-position: center center; */
+  background-size: cover;
+  margin: 50px auto;
+  border-radius: 20px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.playground {
+  display: flex;
+  justify-content: space-evenly;
+}
+.bug,
+.carrot {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100px;
+  height: 100px;
+}
+.bug {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100px;
+  height: 100px;
+}
+.controlBtn {
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: white;
+  font-size: 30px;
+}
+
+.remainingTime {
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: white;
+  font-size: 30px;
+}
+
+.remainingCarrot {
+  padding: 5px;
+  border: 4px solid rgb(224, 103, 103);
+  border-radius: 50%;
+  background-color: rgb(255, 164, 28);
+  font-size: 30px;
+  margin-bottom: 80px;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal__content {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100px;
+  margin: auto;
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 5px solid black;
+  border-radius: 10px;
+  width: 10%; /* Could be more or less, depending on screen size */
+}
+
+.modal__closeBtn {
+  color: #aaa;
+  font-size: 28px;
+  border: none;
+  background-color: transparent;
+}
+
+.modal__closeBtn:hover,
+.modal__closeBtn:focus {
+  cursor: pointer;
+}

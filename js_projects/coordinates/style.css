@@ -1,0 +1,33 @@
+body {
+  background-color: rgb(51, 51, 51);
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.line {
+  position: absolute;
+  background-color: white;
+}
+
+.horizontal {
+  width: 100%;
+  height: 1px;
+}
+.vertical {
+  height: 100%;
+  width: 1px;
+}
+
+.target {
+  position: absolute;
+}
+
+.tag {
+  color: white;
+  position: absolute;
+  will-change: content;
+  z-index: 9;
+}

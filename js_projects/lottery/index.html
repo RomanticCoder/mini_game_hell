@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .canvas{
+            width:400px;
+            height:400px;
+            background-image: url(img/bear.png) ;
+            background-size: cover;
+            position: absolute;
+            z-index: 1
+        }
+        .restartBtn{
+            width:100px;
+            height:100px;
+            position: fixed;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <canvas class="canvas">dd</canvas>
+    </div>
+    <script>
+        let isMouseDown = false;
+        function draw(x,y){
+            ctx.save();
+            ctx.moveTo(x,y);
+            //클릭해서 원을 그림
+            ctx.arc(x,y,50,0,2*Math.PI);
+            //그 부분을 찰칵!
+            ctx.clip();
+
+            ctx.clearRect(0,0,400,400);
+            ctx.restore();
+        }
+
+        function handleMouseMove(e){
+            if(!isMouseDown){
+                return;
+            }
+            const x = e.clientX;
+            const y = e.offsetY;
+            draw(x,y);
+
+        }
+
+        function handleMouseDown(e){
+            isMouseDown = true;
+            const x = e.clientX;
+            const y = e.offsetY;
+            draw(x,y);
+        }
+
+        function handleMouseUp(e){
+            isMouseDown = false;
+        }
+
+        const canvas = document.querySelector(".canvas");
+        let ctx = canvas.getContext("2d");
+        canvas.width = document.getElementsByClassName("canvas")[0].offsetWidth;
+        canvas.height = document.getElementsByClassName("canvas")[0].offsetHeight;
+
+
+        ctx.fillStyle = "rgb(196,213,225)";
+        ctx.fillRect(0,0,400,400);
+
+        canvas.addEventListener("mousedown",handleMouseDown);
+        canvas.addEventListener("mouseup", handleMouseUp);
+        canvas.addEventListener("mousemove",handleMouseMove);
+
+        const restartBtn =document.querySelector(".restartBtn");
+
+    </script>
+</body>
+</html>

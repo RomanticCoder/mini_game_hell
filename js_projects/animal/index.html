@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fun game</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Mega&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">    
+    <script
+    src="https://kit.fontawesome.com/9eb162ac0d.js"
+    crossorigin="anonymous"></script>
+    <script type="module" src="src/main.js" defer></script>
+
+</head>
+<body>
+
+    <!-- 
+🍽️🐶🐱🍫 🧅-->
+    <section class="game">
+        <header class="game__header">
+            <div class="game__info">
+                <span class="game__timer">0:0</span>
+                <span class="game__score">9</span>    
+            </div>
+            <div class="game__status">💬</div>
+            <button class="game__button">
+                <i class="fas fa-play"></i>
+            </button>
+
+        </header>
+        <div class="game__image"> 🍴 <span>🐶</span> 🥄</div>
+
+        <section class="game__field">
+           
+        </section>
+    </section>
+    <section class="pop-up pop-up--hide">
+        <button class="pop-up__refresh">
+            <i class="fas fa-redo"></i>
+        </button>
+        <button class="pop-up__next-level">
+            <i class="fas fa-forward"></i>
+        </button>
+        <span class="pop-up__message"></span>
+    </section>
+    <section class="modal">
+        <span class="pop-up__message">🎉YOU JUST COMPLETED ALL THE STAGES🎉</span>
+    </section>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 250px;
+        height: 250px;
+        background-color: yellow;
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input type="checkbox" />
+    </div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+      document.addEventListener(
+        'wheel', 
+        event => {
+        console.log('scrolling');
+        //윌같이 빠르게 동작해야하는 이벤트들은 preventDefault를 사용할 수 없음
+        //기다려주기는 너무 바쁘다구 ㅋ
+        //근데 이런경우에도 passive:false로 설정해주면 가능혀 근데 쓰지마 이눔아
+        //event.preventDefault();
+        //[Intervention] Unable to preventDefault inside passive event listener due to target being treated as passive. See <URL>
+        },
+        //{passive:false}
+      );
+      const checkbox = document.querySelector('input');
+      checkbox.addEventListener('click', event => {
+        // long
+        console.log('checked');
+        event.preventDefault();
+      });
+    </script>
+  </body>
+</html>
